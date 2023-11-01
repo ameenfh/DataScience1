@@ -1,3 +1,25 @@
-﻿body
+﻿.smallTitles
 {
+	font-size: 25px;
+	
 }
+
+#allTitles
+{
+	font-family: 'Jost', sans-serif;
+	line-height: 0.8
+}
+
+
+p
+{
+font-family: 'Merriweather', serif;
+}
+
+body
+{
+	margin-left: 30vw;
+	margin-right: 30vw;
+	margin-top: 20vh
+}
+
