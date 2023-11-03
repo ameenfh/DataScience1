@@ -1,0 +1,21 @@
+﻿body
+{
+	background-color: black;
+	color: white;
+}
+
+#Title {
+	font-family: 'Fjalla One', sans-serif;
+}
+
+#miniTitle {
+	font-family: 'Cantarell', sans-serif;
+	font-size: 15px;
+}
+
+#Titles {
+	margin-top: 40vh;
+	margin-bottom: 40vh;
+	margin-left: 10vw;
+	margin-right: 50vw
+}
