@@ -27,28 +27,30 @@
 	}
 }
 
-body
-	{
-		margin-top: 10vh;
-		background-color: red;
+@media screen and (max-width: 999px) {
+	body
+		{
+			margin-top: 10vh;
+			background-color: red;
 
-	}
+		}
 
-	#Title 
-	{
-		margin-left: 10vw;
-		margin-right: 10vw;
-		font-size:27px;
-		color: white;
-		text-align: center;
-		font-family: 'Bentham', serif;
-		line-height: 0.7
-	}
+		#Title 
+		{
+			margin-left: 10vw;
+			margin-right: 10vw;
+			font-size:50px;
+			color: white;
+			text-align: center;
+			font-family: 'Bentham', serif;
+			line-height: 0.7
+		}
 
-	#parag
-	{
-		margin-left: 5vw;
-		margin-right: 5vw;
-		font-family: 'Cabin', sans-serif;
-		padding-top: 10vh;
-	}
+		#parag
+		{
+			margin-left: 10vw;
+			margin-right: 10vw;
+			font-family: 'Cabin', sans-serif;
+			padding-top: 10vh;
+		}
+}
