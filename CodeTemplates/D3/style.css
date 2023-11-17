@@ -1,3 +1,9 @@
 ﻿body
 {
+	background-color: #ded1af;
+}
+
+#chart{
+	margin-left: 30vw;
+	margin-top: 10vh;
 }
