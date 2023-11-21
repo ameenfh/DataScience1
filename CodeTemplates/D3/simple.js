@@ -79,8 +79,14 @@ var data = [
 
  // Add event listeners for hover effect
         path.on("mouseover", function() {
-            d3.select(this).attr("stroke", "#0a77f5").attr("stroke-width", 5).style('opacity', 1);
+            d3.select(this)
+            .attr("stroke", "#0a77f5")
+            .attr("stroke-width", 5)
+            .style('opacity', 1);
         })
         .on("mouseout", function() {
-            d3.select(this).attr("stroke", "#bababa").attr("stroke-width", 3).style('opacity', 0.15);
+            d3.select(this)
+            .attr("stroke", "#bababa")
+            .attr("stroke-width", 3)
+            .style('opacity', 0.15);
         });
