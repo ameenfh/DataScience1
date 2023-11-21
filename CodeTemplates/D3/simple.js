@@ -74,37 +74,13 @@ var data = [
             .attr("fill", "none")
             .attr("stroke", "#bababa")
             .attr("stroke-width", 3)
-            .style('opacity', 0.25);
-            
-
-            // Add text on the line 2
-            var text1 = svg.append("text")
-                .append("textPath")
-                .attr("href", "#text-path")
-                .style("text-anchor", "middle")
-                .attr("startOffset", "50%")
-                .attr("fill", "#0a77f5")
-                .style("font-family", "Verdana, sans-serif")
-                .style("font-size", "20px")
-                .text("Line 1")
-                .style('opacity', 0);
+            .style('opacity', 0.15);
 
 
-        // Add a hidden path for textPath to reference
-            svg.append("defs").append("path")
-                .attr("id", "text-path")
-                .data([data])
-                .attr("d", line)
-                .style("fill", "none")
-                .style("stroke", "none");
-
-
-        // Add event listeners for hover effect
+ // Add event listeners for hover effect
         path.on("mouseover", function() {
             d3.select(this).attr("stroke", "#0a77f5").attr("stroke-width", 5).style('opacity', 1);
-            text1.style('opacity', 1);
         })
         .on("mouseout", function() {
-            d3.select(this).attr("stroke", "#bababa").attr("stroke-width", 3).style('opacity', 0.25);
-            text1.style('opacity', 0);
+            d3.select(this).attr("stroke", "#bababa").attr("stroke-width", 3).style('opacity', 0.15);
         });
