@@ -54,8 +54,8 @@ img {
 }
 
 .analysisText{
-	padding-right: 5vw;
-	padding-left: 5vw;
+	padding-right: 10vw;
+	padding-left: 10vw;
 }
 
 #dataText, #answerText{
@@ -68,10 +68,18 @@ img {
 	transition: opacity 1s ease-in-out; /* Adjust the duration and easing function as needed */
 }
 
-.section2, #section3, #section4, #answerText, #answerTitle {
+.section2, #section3, #section4, #answerText, #answerTitle, #intro {
 	opacity: 0;
 	transition: opacity 1s ease-in-out; /* Adjust the duration and easing function as needed */
 }
+
+#intro{
+	margin-top: 300px;
+	margin-left: 10vw;
+	margin-right: 10vw;
+
+}
+
 
 @media screen and (max-width:1200px){
 	h1 {

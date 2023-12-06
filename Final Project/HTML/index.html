@@ -48,7 +48,9 @@
 
     </script>
 
-
+    <p id = "intro">
+        Imagine entering Walmart, greeted by the cool AC as you walk through the sliding doors. Your stomach grumbles as you remember only having $5 in your wallet. <b> But what would fill your stomach for the best price: junk food or something healthy, like fruits and vegetables?</b>  I analyzed USDA data for snack prices and produce prices for 2023 to answer this question. <br> <br> You race through the snack aisle, scanning through the prices. Then, you dash to the produce section. Your eyes widen and your jaw drops as you leave with a bag filled with…
+    </p>
 
 
 
@@ -300,6 +302,7 @@ svg.append("g")
 document.addEventListener("DOMContentLoaded", function () {
     var section1a = document.getElementById("mainTitle");
     var section1b = document.getElementById("mainTitle2");
+    var intro = document.getElementById("intro");
     var section2a = document.getElementById("s2Title");
     var section2b = document.getElementById("dataText");
     var section3 = document.getElementById("section3");
@@ -310,8 +313,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", function () {
         // Check if the scroll position is beyond the threshold
-        if (window.scrollY < 600) {
-            var opacity = 1 - window.scrollY / 400; // Adjust the threshold as needed
+        if (window.scrollY < 700) {
+            var opacity = 1 - window.scrollY / 700; // Adjust the threshold as needed
 
             // Ensure the opacity stays within the range [0, 1]
             opacity = Math.max(0, Math.min(1, opacity));
@@ -319,15 +322,37 @@ document.addEventListener("DOMContentLoaded", function () {
             // Set the opacity of the text element
             section1a.style.opacity = opacity.toFixed(2);
             section1b.style.opacity = opacity.toFixed(2);
-
-            section2a.style.opacity = 1 - opacity.toFixed(2);
-            section2b.style.opacity =  1 - opacity.toFixed(2);
+            intro.style.opacity = 1 - opacity.toFixed(2);
         
         }
         
-        
-        else if (window.scrollY >= 600 && window.scrollY < 800) {
+        else if (window.scrollY >= 700 && window.scrollY < 800) {
             var opacity = window.scrollY / 600; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        intro.style.opacity = opacity.toFixed(2);
+        }
+        else if (window.scrollY >= 800 && window.scrollY < 1000) {
+        var opacity = 1- window.scrollY / 800; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        intro.style.opacity = opacity.toFixed(2);
+        intro.style.opacity =  opacity.toFixed(2);
+        section2a.style.opacity = opacity.toFixed(2);
+        section2b.style.opacity = opacity.toFixed(2);
+        }
+
+
+
+        
+        else if (window.scrollY >= 1000 && window.scrollY < 1250) {
+            var opacity = window.scrollY / 1000; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -336,8 +361,8 @@ document.addEventListener("DOMContentLoaded", function () {
         section2a.style.opacity = opacity.toFixed(2);
         section2b.style.opacity = opacity.toFixed(2);
         }
-        else if (window.scrollY >= 800 && window.scrollY < 1000) {
-        var opacity = 1- window.scrollY / 800; // Adjust the threshold as needed
+        else if (window.scrollY >= 1250 && window.scrollY < 1450) {
+        var opacity = 1- window.scrollY / 1250; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -349,8 +374,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         
-        else if (window.scrollY >= 1000 && window.scrollY < 1300) {
-            var opacity = window.scrollY / 1000; // Adjust the threshold as needed
+        else if (window.scrollY >= 1450 && window.scrollY < 1700) {
+            var opacity = window.scrollY / 1450; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -358,8 +383,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set the opacity of the text element
         section3.style.opacity = opacity.toFixed(2);
         }
-        else if (window.scrollY >= 1300 && window.scrollY < 1600) {
-        var opacity = 1- window.scrollY / 1200; // Adjust the threshold as needed
+        else if (window.scrollY >= 1700 && window.scrollY < 2000) {
+        var opacity = 1- window.scrollY / 1600; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -370,8 +395,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         
-        else if (window.scrollY >= 1600 && window.scrollY < 2000) {
-            var opacity = window.scrollY / 1600; // Adjust the threshold as needed
+        else if (window.scrollY >= 2000 && window.scrollY < 2400) {
+            var opacity = window.scrollY / 2000; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -379,8 +404,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set the opacity of the text element
         section4.style.opacity = opacity.toFixed(2);
         }
-        else if (window.scrollY >= 2000 && window.scrollY < 2300) {
-        var opacity = 1- window.scrollY / 1900; // Adjust the threshold as needed
+        else if (window.scrollY >= 2400 && window.scrollY < 2700) {
+        var opacity = 1- window.scrollY / 2300; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -392,8 +417,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        else if (window.scrollY >= 2300 && window.scrollY < 2500) {
-            var opacity = window.scrollY / 1600; // Adjust the threshold as needed
+        else if (window.scrollY >= 2700 && window.scrollY < 2900) {
+            var opacity = window.scrollY / 2700; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
