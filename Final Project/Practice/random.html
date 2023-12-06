@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="random.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+<body>
+ 
+<h1 id="cyclingText">Initial Sentence</h1>
+    <script>
+        
+      // Select the h1 tag
+      const h1Element = document.getElementById("cyclingText");
+
+      // Initial sentences
+      const sentences = ["First Sentence", "Second Sentence"];
+      let currentIndex = 0;
+
+      // Function to update text
+      
+      function updateText() {
+        h1Element.textContent = sentences[currentIndex];
+
+        // Toggle between sentences
+        currentIndex = (currentIndex + 1) % sentences.length;
+      }
+
+      // Set interval to update text every 2000 milliseconds (2 seconds)
+      setInterval(updateText, 2000);
+    </script>
+    
+</body>
+</html>

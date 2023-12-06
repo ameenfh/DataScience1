@@ -14,80 +14,397 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="script.js"></script>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
 </head>
 <body>
-    <h1>
-        Grocery Shoppers: <br>Are Produce or Snacks Better for Your Wallet?
+
+    <h1 id = "mainTitle" class = "section1">
+        Which is Better For Your Wallet:
     </h1>
+    <h1 id = "mainTitle2" class = "section1">Produce?</h1>
         
-    <h2>
+    <script>
+    // Select the h1 tag
+      const h1Element = document.getElementById("mainTitle2");
+
+      // Initial sentences
+      const sentences = ["Produce?", "Snacks?"];
+      let currentIndex = 0;
+
+      // Function to update text
+      
+      function updateText() {
+        h1Element.textContent = sentences[currentIndex];
+
+        // Toggle between sentences
+        currentIndex = (currentIndex + 1) % sentences.length;
+      }
+
+      // Set interval to update text every 2000 milliseconds (2 seconds)
+      setInterval(updateText, 1000);
+
+
+    </script>
+
+
+
+
+
+
+    <h2 id = "s2Title"class = "section2">
         My Data
     </h2>
-    <p id = "dataText">
+    <p id = "dataText" class = "section2">
         I consider the three datasets that I found reliable and comprehensive. They are reliable because they come from the <a href = https://www.ers.usda.gov/data-products/fruit-and-vegetable-prices/> US Department of Agriculture’s Economic research </a>on the prices of fruits, vegetables, and snack foods. This data is comprehensive because it contains information about different types of fruits, vegetables, and snacks and their different forms (e.g. the dataset on fruit talks about the costs of apple sauce, apples in fruit form, and apple juice). Additionally, the fruit and vegetable datasets are up-to-date, last updated in 5/24/23.
     </p>
     
-
-    <h2 id = "visTitle">
-        Visualizations
-    </h2>
-    <p>
-    <table>
+    <table id = "section3">
         <tr>
-            <th class = "imageLabel">
-                Fruits and Vegetables
-            </th>
-
-            <th class = "imageLabel">
-                Snacks
-            </th>
+            <th colspan = "2"> Fruit and Vegetable Data </th>
         </tr>
-
         <tr>
-            <td>
-            <div class = 'picBox'>
-                <img src = "fruithist.png">
-            </div>
-            </td>
-            <td>
-            <div class = 'picBox'>
-                <img src = "snackhist.png">
-            </div>
-            </td>
+        <td class = "analysisText"> 
+            Fruit and vegetable prices in the US are strongly right skewed. Most fruits and vegetables cost between $1.5 and $2.5 per pound. The central price for fruits and vegetables is about $1.9 per pound. Outlier prices exist above $5.5 per pound. Fruit and vegetable prices vary from $0.2 to $4.75.
+        </td>
+        <td>
+            <div id="histogram-container"></div>
+        </td>
         </tr>
-
+    </table>
+    
+    <table id = "section4">
         <tr>
-            <td>
-            <div class = 'picBox'>
-                <img src = "fruitbox.png">
-            </div>
-            </td>
-            <td>
-            <div class = 'picBox'>
-                <img src = "snackbox.png">
-            </div>
-            </td>
+            <th colspan = "2"> Snack Data </th>
         </tr>
-
         <tr>
-            <th colspan = "2" id = "aTitle"> Analysis </th>
-        </tr>
-
-        <tr>
+          <td> <div id="histogram-container2"></div> </td>
            <td class = "analysisText">
-                Fruit and vegetable (f&v) prices are strongly right skewed. Most f&v cost between $1.5 and $2.5 per pound. The central price for f&v is about $1.9 per pound. Outlier prices exist above $5.5 per pound. F&v prices vary from $0.2 to $4.75.
-           </td>
-           <td class = "analysis">
-                Snacks prices are slightly right skewed. Most snack prices are between $3.1 and $4.2 per pound. The middle price for snacks is $3.75 per pound. An outlier snack price is the snack that costs $7.5 per pound. Snack prices vary from $2 to $5.75 per pound (ignoring outliers).
+                Snacks prices in the US are slightly right skewed. Most snack prices are between $3.1 and $4.2 per pound. The middle price for snacks is $3.75 per pound. An outlier snack price is the snack that costs $7.5 per pound. Snack prices vary from $2 to $5.75 per pound (ignoring outliers).
            </td>
         <tr>
     </table>
+
     
-    <h2>
+   
+
+
+
+    <h2 id = "answerTitle">
         My Answer
     </h2>
-    <p>
+    <p id = "answerText">
         It is cheaper, on average, to purchase fruits and vegetables in the US in 2023 than to purchase snack foods. The histograms of the fruits and vegetable data are more right skewed than the snack data. This means that relatively more fruits and vegetables are concentrated around cheaper prices than snacks. In 2023, fruits and vegetables cost an average of $2.27 per pound. In 2023, snacks cost an average of $4.06. This means that snacks cost $1.21 more than fruits and vegetables on average. This trend is the same with the median: $1.9 per pound of fruits/vegetables versus $3.75 per pound of snacks. The fruit and vegetable prices vary from $0.2 to $4.75. On the other hand, snacks range at higher costs, from $2 per pound to $5.75 per pound. Most of the fruit and vegetable costs are between $1.5 and $2.5 while for snacks it is between $3.1 and $4.2.
     </p>
+    
+    <script>
+    // Sample data
+var fvdata = [0.9, 1, 0.93, 1, 0.65, 1, 0.64, 1, 0.96, 1, 0.95, 1, 0.51, 0.92, 0.65, 0.77, 1, 1, 0.96, 1, 0.65, 0.49, 0.96, 1, 0.46, 0.76, 0.71, 1, 0.91, 0.68, 0.62, 1, 0.96, 1, 0.65, 1, 0.9, 1, 0.65, 0.51, 1, 0.65, 1, 0.94, 1, 0.56, 0.96, 1, 0.94, 1, 0.52, 1.1804, 2.1913, 3.4119, 2.7576, 3.1269, 6.07045, 2.2368, 1.2684, 1.0281, 1.3753, 1.0375, 1.7584, 2.7486, 2.3065, 2.1543, 2.6895, 2.6214, 1.2325, 0.7025, 1.0985, 1.2823, 0.8703, 0.8703, 1.2716, 1.1315, 1.6763, 3.5859, 1.9769, 1.9946, 0.9842, 2.4041, 2.682, 1.0418, 1.9022, 1.8908, 1.0287, 1.6642, 1.1933,1.1933, 1.0095, 1.6965, 2.1463, 1.0175, 1.946, 1.2516, 1.8937, 1.2772, 2.5018, 2.1257, 0.9719, 1.7218, 1.6483, 0.9952, 1.8299, 2.5766, 1.404, 1.8995, 2.1861, 1.5339, 1.5296, 1.5978, 2.0033, 3.4464, 3.6417, 1.0496, 1.9288, 1.0492, 1.4942, 3.9803, 1.8562, 5.7719, 0.9751, 0.8742, 1.2933, 0.66822, 1.5371, 1.107, 2.0172, 1.577, 2.1614, 2.994, 2.994, 1.3154, 2.133, 1.1198, 4.1458, 1.1618, 2.3347, 1.10175, 2.4176, 1.0429, 1.9451, 1.5489   ];
+var sdata = [5.555573, 3.606123, 4.571, 3.776, 3.586, 3.861, 3.696, 7.556, 3.420, 5.797, 2.128, 5.335, 3.751, 5.097, 3.437, 1.972, 3.204, 2.679, 3.925]
+
+//Fruit and Vegetable Histogram
+// Set up the SVG container
+var svgWidth = 800;
+var svgHeight = 500;
+var margin = { top: 20, right: 30, bottom: 40, left: 40 };
+
+var width = svgWidth - margin.left - margin.right;
+var height = svgHeight - margin.top - margin.bottom;
+
+var svg = d3
+  .select("#histogram-container")
+  .append("svg")
+  .attr("width", svgWidth)
+  .attr("height", svgHeight)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Create a histogram function for fv
+var histogram = d3.histogram()
+  .domain(d3.extent(fvdata))
+  .thresholds(d3.range(0.5, 6)); // You can adjust the range and number of bins
+
+// Use the histogram function to calculate the bins
+var bins = histogram(fvdata);
+
+// Create the x and y scales
+var x = d3.scaleLinear().domain([0, 8]).range([0, width]);
+var y = d3.scaleLinear().domain([0, d3.max(bins, d => d.length)]).range([height, 0]);
+
+// Create and append the bars
+svg.selectAll("rect")
+  .data(bins)
+  .enter()
+  .append("rect")
+  .attr("x", d => x(d.x0))
+  .attr("y", d => y(d.length))
+  .attr("width", d => x(d.x1) - x(d.x0) - 1)
+  .attr("height", d => height - y(d.length))
+  .style("fill", "#b99ae3")
+  //Histogram interaction
+  .on("mouseover", function (event, d) {
+    d3.select(this).style("fill", "#e3c39a"); // Change color on hover
+  })
+  .on("mouseout", function () {
+    d3.select(this).style("fill", "#b99ae3"); // Revert to original color on mouseout
+  });
+
+// Add x-axis
+svg.append("g")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(x))
+  .append("text")
+  .attr("x", width / 2)
+  .attr("y", margin.bottom - 10)
+  .attr("text-anchor", "middle");
+
+// Add y-axis
+svg.append("g")
+  .call(d3.axisLeft(y))
+  .append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("y", -margin.left + 10)
+  .attr("x", -height / 2)
+  .attr("dy", "0.71em")
+  .attr("text-anchor", "middle");
+
+  //Axis labels
+  svg
+        .append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "end")
+        .attr("x", width) // Adjust this position as needed
+        .attr("y", height + margin.top + 20) // Adjust this position as needed
+        .style("font-family", "Verdana, sans-serif")
+        .style("font-size", "14px")
+        .style("fill", "white")
+        .text("Price Per Pound ($ in 2023)");
+
+      // Add Y-axis label
+      svg
+        .append("text")
+        .attr("class", "y label")
+        .attr("text-anchor", "end")
+        .attr("y", -40) // Adjust this position as needed
+        .attr("dy", ".75em")
+        .attr("transform", "rotate(-90)")
+        .style("font-family", "Verdana, sans-serif")
+        .style("font-size", "14px")
+        .style("fill", "white")
+        .text("Frequency");
+
+
+
+
+
+
+  //snack histogram
+  // Set up the SVG container
+var svgWidth = 800;
+var svgHeight = 500;
+var margin = { top: 20, right: 30, bottom: 40, left: 40 };
+
+var width = svgWidth - margin.left - margin.right;
+var height = svgHeight - margin.top - margin.bottom;
+
+var svg = d3
+  .select("#histogram-container2")
+  .append("svg")
+  .attr("width", svgWidth)
+  .attr("height", svgHeight)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Create a histogram function for fv
+var histogram = d3.histogram()
+  .domain(d3.extent(fvdata))
+  .thresholds(d3.range(0.5, 6)); // You can adjust the range and number of bins
+
+// Use the histogram function to calculate the bins
+var bins = histogram(sdata);
+
+// Create the x and y scales
+var x = d3.scaleLinear().domain([0, 8]).range([0, width]);
+var y = d3.scaleLinear().domain([0, d3.max(bins, d => d.length)]).range([height, 0]);
+
+// Create and append the bars
+svg.selectAll("rect")
+  .data(bins)
+  .enter()
+  .append("rect")
+  .attr("x", d => x(d.x0))
+  .attr("y", d => y(d.length))
+  .attr("width", d => x(d.x1) - x(d.x0) - 1)
+  .attr("height", d => height - y(d.length))
+  .style("fill", "#b99ae3")
+  //Histogram interaction
+  .on("mouseover", function (event, d) {
+    d3.select(this).style("fill", "#e3c39a"); // Change color on hover
+    var count = d.length
+    
+  })
+  .on("mouseout", function () {
+    d3.select(this).style("fill", "#b99ae3"); // Revert to original color on mouseout
+  });
+
+
+// Add x-axis
+svg.append("g")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(x))
+  .append("text")
+  .attr("x", width / 2)
+  .attr("y", margin.bottom - 10)
+  .attr("text-anchor", "middle");
+
+// Add y-axis
+svg.append("g")
+  .call(d3.axisLeft(y))
+  .append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("y", -margin.left + 10)
+  .attr("x", -height / 2)
+  .attr("dy", "0.71em")
+  .attr("text-anchor", "middle");
+
+  //Axis labels
+  svg
+        .append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "end")
+        .attr("x", width) // Adjust this position as needed
+        .attr("y", height + margin.top + 20) // Adjust this position as needed
+        .style("font-family", "Verdana, sans-serif")
+        .style("font-size", "14px")
+        .style("fill", "white")
+        .text("Price Per Pound ($ in 2023)");
+
+      // Add Y-axis label
+      svg
+        .append("text")
+        .attr("class", "y label")
+        .attr("text-anchor", "end")
+        .attr("y", -40) // Adjust this position as needed
+        .attr("dy", ".75em")
+        .attr("transform", "rotate(-90)")
+        .style("font-family", "Verdana, sans-serif")
+        .style("font-size", "14px")
+        .style("fill", "white")
+        .text("Frequency");
+
+
+
+
+//JS fade in and fade out of sections
+document.addEventListener("DOMContentLoaded", function () {
+    var section1a = document.getElementById("mainTitle");
+    var section1b = document.getElementById("mainTitle2");
+    var section2a = document.getElementById("s2Title");
+    var section2b = document.getElementById("dataText");
+    var section3 = document.getElementById("section3");
+    var section4 = document.getElementById("section4");
+    var section5a = document.getElementById("answerTitle");
+    var section5b = document.getElementById("answerText");
+   
+
+    window.addEventListener("scroll", function () {
+        // Check if the scroll position is beyond the threshold
+        if (window.scrollY < 600) {
+            var opacity = 1 - window.scrollY / 400; // Adjust the threshold as needed
+
+            // Ensure the opacity stays within the range [0, 1]
+            opacity = Math.max(0, Math.min(1, opacity));
+
+            // Set the opacity of the text element
+            section1a.style.opacity = opacity.toFixed(2);
+            section1b.style.opacity = opacity.toFixed(2);
+
+            section2a.style.opacity = 1 - opacity.toFixed(2);
+            section2b.style.opacity =  1 - opacity.toFixed(2);
+        
+        }
+        
+        
+        else if (window.scrollY >= 600 && window.scrollY < 800) {
+            var opacity = window.scrollY / 600; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        section2a.style.opacity = opacity.toFixed(2);
+        section2b.style.opacity = opacity.toFixed(2);
+        }
+        else if (window.scrollY >= 800 && window.scrollY < 1000) {
+        var opacity = 1- window.scrollY / 800; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        section2a.style.opacity = opacity.toFixed(2);
+        section2b.style.opacity = opacity.toFixed(2);
+        section3.style.opacity =  opacity.toFixed(2);
+        }
+        
+        
+        else if (window.scrollY >= 1000 && window.scrollY < 1300) {
+            var opacity = window.scrollY / 1000; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        section3.style.opacity = opacity.toFixed(2);
+        }
+        else if (window.scrollY >= 1300 && window.scrollY < 1600) {
+        var opacity = 1- window.scrollY / 1200; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        section3.style.opacity = opacity.toFixed(2);
+        section4.style.opacity = opacity.toFixed(2);
+        }
+
+        
+        else if (window.scrollY >= 1600 && window.scrollY < 2000) {
+            var opacity = window.scrollY / 1600; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        section4.style.opacity = opacity.toFixed(2);
+        }
+        else if (window.scrollY >= 2000 && window.scrollY < 2300) {
+        var opacity = 1- window.scrollY / 1900; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        section4.style.opacity = opacity.toFixed(2);
+        section5a.style.opacity = opacity.toFixed(2);
+        section5b.style.opacity = opacity.toFixed(2);
+        }
+
+
+        else if (window.scrollY >= 2300 && window.scrollY < 2500) {
+            var opacity = window.scrollY / 1600; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        section5a.style.opacity = opacity.toFixed(2);
+        section5b.style.opacity = opacity.toFixed(2);
+        }
+    });
+});
+
+    </script>
 </body>
 </html>
