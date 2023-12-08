@@ -58,9 +58,13 @@ img {
 	padding-left: 10vw;
 }
 
-#dataText, #answerText{
+#dataText, #answerText, #insightText{
 	margin-left: 10vw;
 	margin-right: 10vw;
+}
+
+#insightText{
+	margin-bottom: 200px;
 }
 
 .section1 {
@@ -68,7 +72,7 @@ img {
 	transition: opacity 1s ease-in-out; /* Adjust the duration and easing function as needed */
 }
 
-.section2, #section3, #section4, #answerText, #answerTitle, #intro {
+.section2, #section3, #section4, #answerText, #answerTitle, #intro, #insight, #insightText {
 	opacity: 0;
 	transition: opacity 1s ease-in-out; /* Adjust the duration and easing function as needed */
 }

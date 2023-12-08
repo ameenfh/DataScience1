@@ -100,6 +100,14 @@
         It is cheaper, on average, to purchase fruits and vegetables in the US in 2023 than to purchase snack foods. The histograms of the fruits and vegetable data are more right skewed than the snack data. This means that relatively more fruits and vegetables are concentrated around cheaper prices than snacks. In 2023, fruits and vegetables cost an average of $2.27 per pound. In 2023, snacks cost an average of $4.06. This means that snacks cost $1.21 more than fruits and vegetables on average. This trend is the same with the median: $1.9 per pound of fruits/vegetables versus $3.75 per pound of snacks. The fruit and vegetable prices vary from $0.2 to $4.75. On the other hand, snacks range at higher costs, from $2 per pound to $5.75 per pound. Most of the fruit and vegetable costs are between $1.5 and $2.5 while for snacks it is between $3.1 and $4.2.
     </p>
     
+
+    <h2 id = "insight">
+        Central Insight
+    </h2>
+    <p id = "insightText">
+        The data consistently shows that the cost per pound of produce is generally lower than that of snack foods. In a world of financial constraints, these findings empower consumers to make more economical choices, minimizing wasteful spending. 
+Ultimately, the key takeaway is that individuals on limited budgets wanting to maximize food quantity should prioritize purchasing fruits and vegetables over chips and desserts.
+    </p>
     <script>
     // Sample data
 var fvdata = [0.9, 1, 0.93, 1, 0.65, 1, 0.64, 1, 0.96, 1, 0.95, 1, 0.51, 0.92, 0.65, 0.77, 1, 1, 0.96, 1, 0.65, 0.49, 0.96, 1, 0.46, 0.76, 0.71, 1, 0.91, 0.68, 0.62, 1, 0.96, 1, 0.65, 1, 0.9, 1, 0.65, 0.51, 1, 0.65, 1, 0.94, 1, 0.56, 0.96, 1, 0.94, 1, 0.52, 1.1804, 2.1913, 3.4119, 2.7576, 3.1269, 6.07045, 2.2368, 1.2684, 1.0281, 1.3753, 1.0375, 1.7584, 2.7486, 2.3065, 2.1543, 2.6895, 2.6214, 1.2325, 0.7025, 1.0985, 1.2823, 0.8703, 0.8703, 1.2716, 1.1315, 1.6763, 3.5859, 1.9769, 1.9946, 0.9842, 2.4041, 2.682, 1.0418, 1.9022, 1.8908, 1.0287, 1.6642, 1.1933,1.1933, 1.0095, 1.6965, 2.1463, 1.0175, 1.946, 1.2516, 1.8937, 1.2772, 2.5018, 2.1257, 0.9719, 1.7218, 1.6483, 0.9952, 1.8299, 2.5766, 1.404, 1.8995, 2.1861, 1.5339, 1.5296, 1.5978, 2.0033, 3.4464, 3.6417, 1.0496, 1.9288, 1.0492, 1.4942, 3.9803, 1.8562, 5.7719, 0.9751, 0.8742, 1.2933, 0.66822, 1.5371, 1.107, 2.0172, 1.577, 2.1614, 2.994, 2.994, 1.3154, 2.133, 1.1198, 4.1458, 1.1618, 2.3347, 1.10175, 2.4176, 1.0429, 1.9451, 1.5489   ];
@@ -309,6 +317,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var section4 = document.getElementById("section4");
     var section5a = document.getElementById("answerTitle");
     var section5b = document.getElementById("answerText");
+    var section6a = document.getElementById("insight");
+    var section6b = document.getElementById("insightText");
    
 
     window.addEventListener("scroll", function () {
@@ -351,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         
-        else if (window.scrollY >= 1000 && window.scrollY < 1250) {
+        else if (window.scrollY >= 1000 && window.scrollY < 1400) {
             var opacity = window.scrollY / 1000; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
@@ -361,8 +371,8 @@ document.addEventListener("DOMContentLoaded", function () {
         section2a.style.opacity = opacity.toFixed(2);
         section2b.style.opacity = opacity.toFixed(2);
         }
-        else if (window.scrollY >= 1250 && window.scrollY < 1450) {
-        var opacity = 1- window.scrollY / 1250; // Adjust the threshold as needed
+        else if (window.scrollY >= 1400 && window.scrollY < 1600) {
+        var opacity = 1- window.scrollY / 1400; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -374,8 +384,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         
-        else if (window.scrollY >= 1450 && window.scrollY < 1700) {
-            var opacity = window.scrollY / 1450; // Adjust the threshold as needed
+        else if (window.scrollY >= 1600 && window.scrollY < 1800) {
+            var opacity = window.scrollY / 1600; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -383,8 +393,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set the opacity of the text element
         section3.style.opacity = opacity.toFixed(2);
         }
-        else if (window.scrollY >= 1700 && window.scrollY < 2000) {
-        var opacity = 1- window.scrollY / 1600; // Adjust the threshold as needed
+        else if (window.scrollY >= 1800 && window.scrollY < 2100) {
+        var opacity = 1- window.scrollY / 1800; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -395,8 +405,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         
-        else if (window.scrollY >= 2000 && window.scrollY < 2400) {
-            var opacity = window.scrollY / 2000; // Adjust the threshold as needed
+        else if (window.scrollY >= 2100 && window.scrollY < 2500) {
+            var opacity = window.scrollY / 2100; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -404,8 +414,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set the opacity of the text element
         section4.style.opacity = opacity.toFixed(2);
         }
-        else if (window.scrollY >= 2400 && window.scrollY < 2700) {
-        var opacity = 1- window.scrollY / 2300; // Adjust the threshold as needed
+        else if (window.scrollY >= 2500 && window.scrollY < 2800) {
+        var opacity = 1- window.scrollY / 2500; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -417,8 +427,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        else if (window.scrollY >= 2700 && window.scrollY < 2900) {
-            var opacity = window.scrollY / 2700; // Adjust the threshold as needed
+        else if (window.scrollY >= 3000 && window.scrollY < 3300) {
+            var opacity = window.scrollY / 3000; // Adjust the threshold as needed
 
         // Ensure the opacity stays within the range [0, 1]
         opacity = Math.max(0, Math.min(1, opacity));
@@ -427,6 +437,35 @@ document.addEventListener("DOMContentLoaded", function () {
         section5a.style.opacity = opacity.toFixed(2);
         section5b.style.opacity = opacity.toFixed(2);
         }
+        else if (window.scrollY >= 3300 && window.scrollY < 3500) {
+            var opacity = 1 - window.scrollY / 3300; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        section5a.style.opacity = opacity.toFixed(2);
+        section5b.style.opacity = opacity.toFixed(2);
+        section6a.style.opacity = opacity.toFixed(2);
+        section6b.style.opacity = opacity.toFixed(2);
+        }
+
+        else if (window.scrollY >= 3500 && window.scrollY < 3700) {
+            var opacity = window.scrollY / 3500; // Adjust the threshold as needed
+
+        // Ensure the opacity stays within the range [0, 1]
+        opacity = Math.max(0, Math.min(1, opacity));
+
+        // Set the opacity of the text element
+        section6a.style.opacity = opacity.toFixed(2);
+        section6b.style.opacity = opacity.toFixed(2);
+        }
+
+
+
+
+
+
     });
 });
 
